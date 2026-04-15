@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="India's trusted supplier of professional-grade Pilates equipment. Reformers, Cadillacs, Stability Chairs & more. Pan-India delivery. Serving 25+ studios."/>
+<meta property="og:title" content="Pilates Hub – Premium Pilates Equipment & Machines"/>
+<meta property="og:description" content="India's trusted supplier of professional-grade Pilates equipment. Pan-India delivery to studios, physiotherapy clinics & wellness centres."/>
+<meta property="og:image" content="images/logo.png"/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#D4A017"/>
+<title>Pilates Hub – Premium Pilates Equipment & Machines</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#111111;--dark:#ffffff;--dark2:#f5f5f5;--dark3:#eeeeee;
+  --gold:#D4A017;--gold2:#b8860b;--gold3:#c49010;
+  --gold-grad:linear-gradient(135deg,#c49010 0%,#D4A017 50%,#c49010 100%);
+  --white:#111111;--mid:#555555;
+  --border:rgba(212,160,23,0.3);--border-dark:rgba(0,0,0,0.1);
+  --font-d:'Cormorant Garamond',Georgia,serif;--font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:#ffffff;color:#111111;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+  padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo img{height:52px;width:auto;display:block}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:13.5px;color:#555555;transition:color .2s;letter-spacing:.04em}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold-grad)!important;color:var(--black)!important;padding:9px 22px;
+  border-radius:50px;font-size:13px!important;font-weight:500!important;transition:opacity .2s!important}
+.nav-cta:hover{opacity:.85!important;color:var(--black)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:22px;height:2px;background:var(--gold);border-radius:2px}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;
+  background:#ffffff;border-bottom:1px solid var(--border);padding:20px 5%;flex-direction:column;gap:16px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{color:#111111;font-size:15px}
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 6% 80px 8%;background:#ffffff}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:inline-block;width:32px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--font-d);font-size:clamp(40px,5vw,66px);font-weight:600;line-height:1.1;
+  color:#111111;margin-bottom:24px}
+.hero h1 em{font-style:italic;background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:15.5px;color:#555555;line-height:1.85;max-width:420px;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{background:var(--gold-grad);color:var(--black);padding:14px 32px;border-radius:50px;
+  font-size:14px;font-weight:500;border:none;cursor:pointer;display:inline-block;
+  transition:opacity .2s,transform .15s;font-family:var(--font-b)}
+.btn-gold:hover{opacity:.85;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#111111;padding:13px 28px;border-radius:50px;
+  font-size:14px;border:1.5px solid rgba(17,17,17,0.3);display:inline-block;transition:border-color .2s,color .2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:36px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(0,0,0,0.1)}
+.stat-num{font-family:var(--font-d);font-size:30px;font-weight:600;display:block;
+  background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:12px;color:#555555;letter-spacing:.06em}
+.hero-right{background:var(--black);display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden}
+.hero-video{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;display:block}
+.hero-right::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;
+  border:60px solid rgba(212,160,23,.05);border-radius:50%}
+.hero-right::after{content:'';position:absolute;bottom:-60px;left:-60px;width:220px;height:220px;
+  border:40px solid rgba(212,160,23,.04);border-radius:50%}
+/* SECTIONS */
+section{padding:90px 8%}
+.section-eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--font-d);font-size:clamp(30px,3.5vw,46px);font-weight:600;
+  line-height:1.15;color:#111111;margin-bottom:16px}
+.section-sub{font-size:15px;color:#555555;max-width:560px;line-height:1.8}
+.section-header{margin-bottom:56px}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:0 auto}
+/* PRODUCTS */
+#products{background:#ffffff}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.product-card{background:#ffffff;border:1px solid rgba(0,0,0,0.1);border-radius:16px;
+  overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-6px);border-color:rgba(212,160,23,.5);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+.product-img{height:210px;display:flex;align-items:center;justify-content:center;
+  font-size:60px;background:#f0f0f0;overflow:hidden;padding:0}
+.product-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.product-info{padding:22px;display:flex;flex-direction:column;flex:1}
+.product-tag{display:inline-block;font-size:10.5px;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);background:rgba(212,160,23,.1);
+  padding:4px 10px;border-radius:50px;margin-bottom:10px;border:1px solid rgba(212,160,23,0.3)}
+.product-name{font-family:var(--font-d);font-size:21px;font-weight:600;color:#111111;margin-bottom:8px}
+.product-desc{font-size:13.5px;color:#555555;line-height:1.6;margin-bottom:18px}
+.product-btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:auto;padding-top:8px}
+.btn-view{background:var(--gold-grad);color:var(--black);padding:9px 18px;border-radius:50px;
+  font-size:12.5px;font-weight:500;transition:opacity .2s}
+.btn-view:hover{opacity:.85}
+.btn-enq{font-size:12.5px;color:var(--gold);font-weight:500;padding:9px 0;
+  border-bottom:1px solid rgba(212,160,23,.4);transition:border-color .2s}
+.btn-enq:hover{border-color:var(--gold);color:var(--gold)}
+/* WHY */
+#why{background:#f8f8f8}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+.why-card{padding:32px 28px;border:1px solid rgba(0,0,0,0.08);border-radius:16px;
+  background:#ffffff;transition:border-color .2s,box-shadow .2s}
+.why-card:hover{border-color:rgba(212,160,23,.5);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.why-icon{font-size:30px;margin-bottom:16px;display:block}
+.why-title{font-family:var(--font-d);font-size:19px;font-weight:600;color:#111111;margin-bottom:10px}
+.why-desc{font-size:14px;color:#555555;line-height:1.7}
+/* CONTACT */
+#contact{background:#ffffff}
+.contact-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:start}
+.contact-info h3{font-family:var(--font-d);font-size:28px;font-weight:600;color:#111111;margin-bottom:16px}
+.contact-info p{font-size:15px;color:#555555;margin-bottom:32px;line-height:1.8}
+.contact-methods{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.contact-method{display:flex;align-items:center;gap:14px;padding:14px 18px;
+  border:1px solid rgba(0,0,0,0.1);border-radius:12px;background:#f8f8f8;
+  transition:border-color .2s,transform .15s}
+.contact-method:hover{border-color:rgba(212,160,23,.5);transform:translateX(4px)}
+.contact-method-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;
+  justify-content:center;font-size:18px;flex-shrink:0;background:rgba(212,160,23,.1)}
+.contact-method strong{display:block;font-size:13px;font-weight:500;color:#111111}
+.contact-method span{font-size:12px;color:#555555}
+.contact-form{background:#f8f8f8;border:1px solid rgba(0,0,0,0.1);border-radius:20px;padding:40px}
+.contact-form h3{font-family:var(--font-d);font-size:24px;font-weight:600;color:#111111;margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:11.5px;font-weight:500;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{
+  border:1.5px solid rgba(0,0,0,0.15);border-radius:10px;padding:12px 14px;
+  font-size:14px;font-family:var(--font-b);background:#ffffff;color:#111111;
+  transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(0,0,0,.35)}
+.form-group select option{background:#ffffff;color:#111111}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;background:var(--gold-grad);color:var(--black);border:none;padding:15px;
+  border-radius:50px;font-size:15px;font-weight:500;font-family:var(--font-b);cursor:pointer;
+  transition:opacity .2s;margin-top:8px}
+.form-submit:hover{opacity:.85}
+.form-note{font-size:12px;color:#777777;text-align:center;margin-top:12px}
+.success-msg{display:none;background:rgba(212,160,23,.1);border:1px solid var(--gold);
+  color:#b8860b;border-radius:12px;padding:16px;font-size:14px;text-align:center;margin-top:16px}
+/* FOOTER */
+footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px solid rgba(0,0,0,0.1)}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:40px;border-bottom:1px solid rgba(0,0,0,0.1);margin-bottom:28px}
+.footer-brand-name{font-family:var(--font-d);font-size:22px;color:#111111;font-weight:600;margin-bottom:12px}
+.footer-tagline{font-size:13.5px;line-height:1.7;max-width:240px}
+.footer-col h4{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{color:#555555;font-size:14px;transition:color .2s}
+.footer-col ul a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;
+  font-size:12.5px;flex-wrap:wrap;gap:12px;color:rgba(0,0,0,.4)}
+/* WA */
+.whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;
+  background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.4);animation:wapulse 3s infinite}
+.whatsapp-float svg{width:30px;height:30px;fill:white}
+@keyframes wapulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4)}50%{box-shadow:0 6px 32px rgba(37,211,102,.7)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}.hero-right{min-height:300px}
+  .contact-layout{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}.hamburger{display:flex}
+}
+@media(max-width:600px){
+  section{padding:60px 5%}.form-row{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap;gap:20px}.footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Pilates Hub"></a>
+  <ul class="nav-links">
+    <li><a href="#products">Equipment</a></li>
+    <li><a href="#accessories">Accessories</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#products" onclick="toggleMenu()">Equipment</a>
+  <a href="#accessories" onclick="toggleMenu()">Accessories</a>
+  <a href="#why" onclick="toggleMenu()">Why Us</a>
+  <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<main id="main-content"><!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Premium Pilates Equipment</div>
+    <h1><em>Transform Your Studio</em><br>With Expert Equipment</h1>
+    <p class="hero-desc">India's trusted supplier of professional-grade Pilates machines and accessories. From reformers to cadillacs — we equip studios, physiotherapy clinics, and wellness centres.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-gold">Explore Equipment →</a>
+      <a href="#contact" class="btn-outline">Get a Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="stat-num">25+</span><span class="stat-label">Studios Equipped</span></div>
+      <div><span class="stat-num">9+</span><span class="stat-label">Top Brands</span></div>
+      <div><span class="stat-num">Pan-India</span><span class="stat-label">Delivery</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="videos/welcome.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-header fade-in">
+    <div class="section-eyebrow">Our Equipment Range</div>
+    <h2 class="section-title">Professional Pilates Machines</h2>
+    <p class="section-sub">We supply a comprehensive range of certified Pilates equipment for studios, wellness centres, and physiotherapy clinics.</p>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/reformer.jpg" alt="Reformer" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Best Seller</span>
+        <div class="product-name">Reformer</div>
+        <p class="product-desc">Spring-resistance system for full-body strength, flexibility, and control. The flagship of Pilates training.</p>
+        <div class="product-btns"><a href="reformer.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/cadillac.jpg" alt="Cadillac" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Advanced</span>
+        <div class="product-name">Cadillac</div>
+        <p class="product-desc">A versatile multi-functional trapeze table for rehabilitation, advanced stretching, and spring-assisted exercises.</p>
+        <div class="product-btns"><a href="cadillac.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/stability-chair.jpg" alt="Stability Chair" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Compact</span>
+        <div class="product-name">Stability Chair</div>
+        <p class="product-desc">Compact powerhouse for balance, core stability, and lower-body conditioning. Ideal for boutique studios.</p>
+        <div class="product-btns"><a href="stability-chair.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/ladder-barrel.jpg" alt="Ladder Barrel" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Classic</span>
+        <div class="product-name">Ladder Barrel</div>
+        <p class="product-desc">Combines a barrel with a ladder for spinal stretching, lateral flexion, and hip-opening exercises.</p>
+        <div class="product-btns"><a href="ladder-barrel.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/swedish-ladder.jpg" alt="Swedish Ladder" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Wall-Mount</span>
+        <div class="product-name">Swedish Ladder</div>
+        <p class="product-desc">Wall-mounted ladder system for stretching, strengthening, and postural work with spring attachments.</p>
+        <div class="product-btns"><a href="swedish-ladder.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+
+<!-- ACCESSORIES -->
+<section id="accessories" style="background:#ffffff">
+  <div class="section-header fade-in">
+    <div class="section-eyebrow">Props & Accessories</div>
+    <h2 class="section-title">Studio Essentials</h2>
+    <p class="section-sub">Complete your Pilates practice with our range of certified props and accessories, crafted for performance and durability.</p>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/pilates-stick.jpg" alt="Pilates Stick" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Accessory</span>
+        <div class="product-name">Pilates Stick</div>
+        <p class="product-desc">Solid maple wood alignment rod for posture correction, spinal alignment and balance training across all Pilates disciplines.</p>
+        <div class="product-btns"><a href="pilates-stick.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/wooden-wobble-board.jpg" alt="Wooden Wobble Board" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Accessory</span>
+        <div class="product-name">Wooden Wobble Board</div>
+        <p class="product-desc">Solid birch circular balance board with 6-point 360° caster wheels. Challenges core stability and improves proprioception.</p>
+        <div class="product-btns"><a href="wooden-wobble-board.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="images/exercise-mat.jpg" alt="Exercise Mat" loading="lazy"></div>
+      <div class="product-info">
+        <span class="product-tag">Accessory</span>
+        <div class="product-name">Exercise Mat</div>
+        <p class="product-desc">Professional-grade foldable Pilates mat with high-density foam cushioning, non-slip surface and carry handles.</p>
+        <div class="product-btns"><a href="exercise-mat.html" class="btn-view">View Details →</a><a href="#contact" class="btn-enq">Enquire →</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="section-header fade-in">
+    <div class="section-eyebrow">Why Choose Us</div>
+    <h2 class="section-title">The Pilates Hub Difference</h2>
+    <p class="section-sub">We don't just sell equipment — we partner with you to build exceptional movement spaces.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-in"><span class="why-icon">✅</span><div class="why-title">Certified Equipment</div><p class="why-desc">All products meet international quality standards. Sourced from verified manufacturers trusted by studios worldwide.</p></div>
+    <div class="why-card fade-in"><span class="why-icon">🚚</span><div class="why-title">Pan-India Delivery</div><p class="why-desc">We deliver and install across India — from metro cities to Tier-2 towns, with safe packaging and on-time logistics.</p></div>
+    <div class="why-card fade-in"><span class="why-icon">🔧</span><div class="why-title">After-Sales Service</div><p class="why-desc">Our team provides maintenance, spare parts, and service support so your equipment performs for years.</p></div>
+    <div class="why-card fade-in"><span class="why-icon">🤝</span><div class="why-title">Expert Consultation</div><p class="why-desc">Our specialists guide you based on your studio size, budget, and client demographic.</p></div>
+    <div class="why-card fade-in"><span class="why-icon">💰</span><div class="why-title">Competitive Pricing</div><p class="why-desc">Direct sourcing ensures best price-to-quality ratio. EMI and bulk discount options available.</p></div>
+    <div class="why-card fade-in"><span class="why-icon">⭐</span><div class="why-title">Trusted by 25+ Studios</div><p class="why-desc">From boutique studios to hospital physiotherapy departments — our track record speaks for itself.</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header fade-in">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-title">Let's Build Your Dream Studio</h2>
+    <p class="section-sub">Reach out via any channel — we're here to help you find the perfect equipment.</p>
+  </div>
+  <div class="contact-layout">
+    <div class="contact-info fade-in">
+      <h3>Talk to Our Team</h3>
+      <p>Whether setting up a new studio, upgrading equipment, or just exploring — our specialists are ready to assist.</p>
+      <div class="contact-methods">
+        <a class="contact-method" href="https://wa.me/919738115407?text=Hi%2C%20I%20am%20interested%20in%20Pilates%20equipment" target="_blank">
+          <div class="contact-method-icon">💬</div>
+          <div><strong>WhatsApp Us</strong><span>Chat instantly on WhatsApp</span></div>
+        </a>
+        <a class="contact-method" href="tel:+919738115407">
+          <div class="contact-method-icon">📞</div>
+          <div><strong>+91 97381 15407</strong><span>Call us Mon–Sat, 9am–6pm</span></div>
+        </a>
+        <a class="contact-method" href="mailto:info@pilateshub.in">
+          <div class="contact-method-icon">✉️</div>
+          <div><strong>info@pilateshub.in</strong><span>Email for detailed queries</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form fade-in">
+      <h3>Send an Enquiry</h3>
+      <form id="enquiryForm" onsubmit="submitEnquiry(event)" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label for="inp-name">Full Name *</label><input id="inp-name" type="text" name="name" placeholder="Your name" required/></div>
+          <div class="form-group"><label for="inp-phone">Phone *</label><input id="inp-phone" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required/></div>
+        </div>
+        <div class="form-group"><label for="inp-email">Email</label><input id="inp-email" type="email" name="email" placeholder="you@email.com"/></div>
+        <div class="form-group"><label for="inp-interest">Equipment of Interest</label>
+          <select id="inp-interest" name="interest">
+            <option value="" disabled selected>Select equipment...</option>
+            <option>Reformer</option><option>Cadillac</option><option>Stability Chair</option>
+            <option>Ladder Barrel</option><option>Swedish Ladder</option>
+            <option>Props & Accessories</option><option>Full Studio Setup</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="inp-city">City</label><input id="inp-city" type="text" name="city" placeholder="Your city"/></div>
+        <div class="form-group"><label for="inp-message">Message</label><textarea id="inp-message" name="message" placeholder="Tell us about your studio or requirements..."></textarea></div>
+        <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
+        <p class="form-note">We respond within 24 hours. Your info is never shared.</p>
+      </form>
+      <div class="success-msg" id="successMsg">✅ Thank you! Your enquiry has been received. We'll be in touch shortly.</div>
+    </div>
+  </div>
+</section>
+
+</main><!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Pilates Hub</div>
+      <p class="footer-tagline">India's trusted partner for premium Pilates equipment. Equipping studios, clinics, and wellness centres.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Equipment</h4>
+      <ul>
+        <li><a href="reformer.html">Reformer</a></li>
+        <li><a href="cadillac.html">Cadillac</a></li>
+        <li><a href="stability-chair.html">Stability Chair</a></li>
+        <li><a href="ladder-barrel.html">Ladder Barrel</a></li>
+        <li><a href="swedish-ladder.html">Swedish Ladder</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Accessories</h4>
+      <ul>
+        <li><a href="pilates-stick.html">Pilates Stick</a></li>
+        <li><a href="wooden-wobble-board.html">Wooden Wobble Board</a></li>
+        <li><a href="exercise-mat.html">Exercise Mat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919738115407">+91 97381 15407</a></li>
+        <li><a href="mailto:info@pilateshub.in">info@pilateshub.in</a></li>
+        <li><a href="https://wa.me/919738115407" target="_blank">WhatsApp</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#contact">Enquiry Form</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="yr"></span> PilatesHub. All rights reserved.</span>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/919738115407?text=Hi%2C%20I%20am%20interested%20in%20Pilates%20equipment" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById('mobileNav');
+  const btn=document.querySelector('.hamburger');
+  const open=nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+// ⬇️ PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE (see GOOGLE_APPS_SCRIPT_FOR_NOTIFICATIONS.js for setup)
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbzffjPz3HrALtREoE9rDQzYHPhMHbqV_CQC_NcOkAxuPoGaS4uv_yVMoZyHJG6N7c5UAQ/exec';
+async function submitEnquiry(e){
+  e.preventDefault();
+  const f=e.target;
+  const nameVal=f.name.value.trim();
+  const phoneVal=f.phone.value.trim();
+  if(!nameVal){alert('Please enter your full name.');f.name.focus();return;}
+  if(!phoneVal||phoneVal.replace(/\D/g,'').length<10){alert('Please enter a valid 10-digit phone number.');f.phone.focus();return;}
+  const emailVal=f.email.value.trim();
+  if(emailVal&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){alert('Please enter a valid email address.');f.email.focus();return;}
+  const btn=document.getElementById('submitBtn');
+  btn.textContent='Sending...';btn.disabled=true;
+  const ts=new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'});
+  const data={timestamp:ts,
+    name:f.name.value,phone:f.phone.value,email:f.email.value,
+    interest:f.interest.value,city:f.city.value,message:f.message.value};
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    document.getElementById('enquiryForm').style.display='none';
+    document.getElementById('successMsg').style.display='block';
+  }catch(err){btn.textContent='Send Enquiry \u2192';btn.disabled=false;}
+}
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+
+</script>
+</body></html>
