@@ -176,6 +176,10 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
   .hero-stats{flex-wrap:wrap;gap:20px}.footer-top{grid-template-columns:1fr}
 }
 </style>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="favicon-32.png">
 </head>
 <body>
 <nav role="navigation" aria-label="Main navigation">
@@ -215,7 +219,7 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
     </div>
   </div>
   <div class="hero-right" style="position:relative;">
-    <iframe id="welcomeVideo" src="https://drive.google.com/file/d/1t8f1CX6jzWlF0aqOQ649IycrmGQR8DaV/preview?rm=minimal" style="width:100%;height:100%;position:absolute;top:0;left:0;border:none;" allow="autoplay" allowfullscreen></iframe>
+    <iframe id="welcomeVideo" data-src="https://drive.google.com/file/d/1t8f1CX6jzWlF0aqOQ649IycrmGQR8DaV/preview?rm=minimal" style="width:140%;height:140%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:none;" allow="autoplay" allowfullscreen></iframe>
     <div id="videoPoster" onclick="playVideo()" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:10;background:#ffffff;display:flex;align-items:center;justify-content:center;">
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;width:100%;height:100%;">
         <img src="images/logo.png" alt="Pilates Hub" style="width:60%;max-width:320px;object-fit:contain;display:block;">
@@ -450,7 +454,11 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
 
 <script>
 function playVideo(){
-  document.getElementById('videoPoster').style.display='none';
+  var poster = document.getElementById('videoPoster');
+  var iframe = document.getElementById('welcomeVideo');
+  // Set src now so video loads fresh and autoplays
+  iframe.src = iframe.getAttribute('data-src');
+  poster.style.display='none';
 }
 function toggleMenu(){
   const nav=document.getElementById('mobileNav');
@@ -490,18 +498,5 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 
 </script>
 
-<script>
-// Google Drive video autoplay on page load
-window.addEventListener('load', function() {
-  var iframes = document.querySelectorAll('iframe[src*="drive.google.com"]');
-  iframes.forEach(function(iframe) {
-    var src = iframe.src;
-    // Reload src after short delay to trigger autoplay
-    setTimeout(function() {
-      iframe.src = '';
-      setTimeout(function() { iframe.src = src; }, 100);
-    }, 800);
-  });
-});
-</script>
+
 </body></html>
