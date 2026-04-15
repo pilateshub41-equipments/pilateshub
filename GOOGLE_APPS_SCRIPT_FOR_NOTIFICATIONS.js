@@ -81,7 +81,27 @@ function doPost(e) {
   }
 }
 
-function doGet() {
+function doGet(e) {
+  // Handle form submissions sent as GET with URL params
+  if (e && e.parameter && e.parameter.name) {
+    try {
+      const data = e.parameter;
+      if (!data.timestamp) {
+        data.timestamp = new Date().toLocaleString('en-IN', {timeZone: 'Asia/Kolkata'});
+      }
+      saveToSheet(data);
+      sendOwnerNotification(data);
+      if (data.email) sendAutoReply(data);
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: 'ok' }))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      Logger.log('❌ doGet error: ' + err.message);
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: 'error', message: err.message }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
   return ContentService.createTextOutput('✅ Pilates Hub Script is live!');
 }
 
