@@ -60,10 +60,16 @@ function makeDummyData() {
 // ─────────────────────────────────────────────────────────────
 function doPost(e) {
   try {
-    const data = JSON.parse(e.postData.contents);
+    // Support both FormData (e.parameter) and JSON (e.postData)
+    let data = {};
+    if (e.parameter && Object.keys(e.parameter).length > 0) {
+      data = e.parameter;  // FormData from website form
+    } else if (e.postData && e.postData.contents) {
+      data = JSON.parse(e.postData.contents);  // JSON fallback
+    }
     saveToSheet(data);
     sendOwnerNotification(data);
-    if (data.email) sendAutoReply(data);  // only if customer gave email
+    if (data.email) sendAutoReply(data);
     return ContentService
       .createTextOutput(JSON.stringify({ status: 'ok' }))
       .setMimeType(ContentService.MimeType.JSON);

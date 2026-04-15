@@ -293,7 +293,7 @@ function toggleMenu(){
 }
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxOQr3E8vhWP3Uy_5ebN3K4HRdHGw00PSlrSthPmbllX19k0uHA-L-qX5M5w3M2ZgNcSg/exec';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbzffjPz3HrALtREoE9rDQzYHPhMHbqV_CQC_NcOkAxuPoGaS4uv_yVMoZyHJG6N7c5UAQ/exec';
 async function submitForm(e,machineName){
   e.preventDefault();
   const f=e.target;
@@ -309,7 +309,10 @@ async function submitForm(e,machineName){
     name:f.name.value,phone:f.phone.value,email:f.email.value,
     interest:machineName,city:f.city.value,message:f.message?f.message.value:''};
   try{
-    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    // Use FormData - Google Apps Script reads e.parameter correctly
+    const form = new FormData();
+    Object.keys(data).forEach(k => form.append(k, data[k]));
+    await fetch(SCRIPT_URL, {method:'POST', mode:'no-cors', body:form});
     document.getElementById('buyForm').style.display='none';
     document.getElementById('successMsg').style.display='block';
   }catch(err){btn.textContent='Buy Now';btn.disabled=false;}
