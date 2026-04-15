@@ -412,9 +412,8 @@ async function submitForm(e,machineName){
     name:f.name.value,phone:f.phone.value,email:f.email.value,
     interest:machineName,city:f.city.value,message:f.message?f.message.value:''};
   try{
-    const form = new FormData();
-    Object.keys(data).forEach(k => form.append(k, data[k]));
-    await fetch(SCRIPT_URL, {method:'POST', mode:'no-cors', body:form});
+    const params = new URLSearchParams(data);
+    await fetch(SCRIPT_URL + '?' + params.toString(), {method:'GET', mode:'no-cors'});
     document.getElementById('buyForm').style.display='none';
     document.getElementById('successMsg').style.display='block';
   }catch(err){btn.textContent='Enquire Now →';btn.disabled=false;}
