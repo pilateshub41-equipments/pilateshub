@@ -15,7 +15,7 @@
 :root{
   --black:#111111;--dark:#ffffff;--dark2:#f5f5f5;--dark3:#eeeeee;
   --gold:#D4A017;--gold2:#b8860b;--gold3:#c49010;
-  --gold-grad:linear-gradient(135deg,#c49010 0%,#D4A017 50%,#c49010 100%);
+  --gold-grad:linear-gradient(135deg,#f5e199 0%,#f0d060 30%,#e8c040 60%,#d4aa20 100%);
   --white:#111111;--off-white:#f9f9f9;
   --mid:#555555;--border:rgba(212,160,23,0.3);--border-dark:rgba(0,0,0,0.1);
   --font-d:'Cormorant Garamond',Georgia,serif;--font-b:'DM Sans',sans-serif;
@@ -30,8 +30,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-size:13.5px;color:#555555;transition:color .2s;letter-spacing:.04em}
 .nav-links a:hover{color:var(--gold)}
-.nav-cta{background:var(--gold-grad)!important;color:var(--black)!important;padding:9px 22px;
-  border-radius:50px;font-size:13px!important;font-weight:500!important;transition:opacity .2s!important}
+.nav-cta{background:var(--gold-grad)!important;color:#5a3e00!important;padding:9px 22px;
+  border-radius:50px;font-size:13px!important;font-weight:600!important;transition:opacity .2s!important}
 .nav-cta:hover{opacity:.85!important;color:var(--black)!important}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .hamburger span{width:22px;height:2px;background:var(--gold);border-radius:2px}
@@ -40,8 +40,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
   flex-direction:column;gap:16px}
 .mobile-nav.open{display:flex}
 .mobile-nav a{color:#111111;font-size:15px}
-.btn-gold{background:var(--gold-grad);color:var(--black);padding:14px 32px;border-radius:50px;
-  font-size:14px;font-weight:500;border:none;cursor:pointer;display:inline-block;
+.btn-gold{background:var(--gold-grad);color:#5a3e00;padding:14px 32px;border-radius:50px;
+  font-size:14px;font-weight:600;border:1px solid rgba(180,130,0,0.4);cursor:pointer;display:inline-block;
   transition:opacity .2s,transform .15s;font-family:var(--font-b)}
 .btn-gold:hover{opacity:.85;transform:translateY(-2px)}
 .btn-outline{background:transparent;color:#111111;padding:13px 28px;border-radius:50px;
@@ -116,7 +116,7 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
 .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(0,0,0,.35)}
 .form-group input[readonly]{color:var(--gold);background:rgba(212,160,23,.06)}
 .form-group textarea{min-height:80px;resize:vertical}
-.form-submit{width:100%;background:var(--gold-grad);color:var(--black);border:none;padding:15px;
+.form-submit{width:100%;background:var(--gold-grad);color:#5a3e00;border:none;padding:15px;
   border-radius:50px;font-size:15px;font-weight:500;font-family:var(--font-b);cursor:pointer;
   transition:opacity .2s;margin-top:6px;letter-spacing:.04em}
 .form-submit:hover{opacity:.85}
@@ -215,12 +215,8 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
     <h3>See It In Action</h3>
     <p>Watch the Ladder Barrel in real studio sessions</p>
     <div class="video-grid">
-      <video autoplay muted loop playsinline controls poster="images/ladder-barrel.jpg" class="product-video">
-        <source src="videos/ladder-barrel-1.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline controls poster="images/ladder-barrel-1.jpg" class="product-video">
-        <source src="videos/ladder-barrel-2.mp4" type="video/mp4">
-      </video>
+      <iframe src="https://drive.google.com/file/d/1Dn_nFs24HstkSgKUHEyEKhyvQJW5_F1-/preview" class="product-video" style="min-height:320px;border:none;border-radius:12px;display:block;width:100%;" allow="autoplay" allowfullscreen></iframe>
+      <iframe src="https://drive.google.com/file/d/1aKD5lzMx2zAMKl5PuSZC_d9DdiOvd7wO/preview" class="product-video" style="min-height:320px;border:none;border-radius:12px;display:block;width:100%;" allow="autoplay" allowfullscreen></iframe>
     </div>
   </div>
 </div>
