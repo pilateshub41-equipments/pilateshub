@@ -65,7 +65,7 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
 @keyframes wapulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4)}50%{box-shadow:0 6px 32px rgba(37,211,102,.7)}}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-.gold-text{background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gold-text{color:#D4A017}
 .section-eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
   color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .section-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
@@ -76,13 +76,25 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
 
 .machine-hero{padding-top:64px;background:#ffffff}
 .machine-top{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 64px);align-items:start}
-.gallery-col{position:sticky;top:64px;height:calc(100vh - 64px);background:#ffffff;overflow:hidden}
+.gallery-col{position:sticky;top:64px;height:calc(100vh - 64px);background:#ffffff;overflow:hidden;display:flex;flex-direction:column}
 .gallery-main{width:100%;height:72%;object-fit:contain;display:block;background:#ffffff}
 .gallery-thumbs{display:flex;gap:8px;padding:12px;height:28%;align-items:center;
   background:#f5f5f5;overflow-x:auto;border-top:1px solid rgba(0,0,0,0.06)}
 .gallery-thumbs img{height:70px;width:88px;object-fit:cover;border-radius:6px;cursor:pointer;
   opacity:.5;transition:opacity .2s,border-color .2s;border:2px solid transparent;flex-shrink:0}
 .gallery-thumbs img.active,.gallery-thumbs img:hover{opacity:1;border-color:var(--gold)}
+.gallery-main-wrap{position:relative;height:72%;overflow:hidden;background:#ffffff}
+.gallery-main{width:100%;height:100%;object-fit:contain;display:block;background:#ffffff}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:38px;height:38px;border-radius:50%;background:rgba(212,160,23,0.92);
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;box-shadow:0 2px 10px rgba(0,0,0,0.15)}
+.gallery-nav:hover{background:var(--gold);transform:translateY(-50%) scale(1.1)}
+.gallery-nav svg{width:16px;height:16px;fill:#5a3e00}
+.gallery-prev{left:10px}
+.gallery-next{right:10px}
+.gallery-progress{position:absolute;bottom:0;left:0;height:3px;background:var(--gold);
+  width:0%;transition:width linear;z-index:4}
 .detail-col{padding:50px 48px 80px;overflow-y:auto;background:#ffffff}
 .back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#555555;
   margin-bottom:28px;transition:color .2s;letter-spacing:.04em}
@@ -92,7 +104,7 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
 .machine-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
 .machine-title{font-family:var(--font-d);font-size:clamp(36px,4vw,54px);font-weight:600;
   line-height:1.1;color:#111111;margin-bottom:6px}
-.machine-title span{background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.machine-title span{color:#D4A017}
 .machine-desc{font-size:15px;color:#555555;line-height:1.85;margin-bottom:32px;margin-top:16px}
 .features-title{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
   margin-bottom:16px;font-weight:500}
@@ -172,9 +184,15 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
 <main id="main-content"><div class="machine-hero" id="top">
   <div class="machine-top">
     <div class="gallery-col">
+      <div class="gallery-main-wrap">
+      <div class="gallery-progress"></div>
+      <button class="gallery-nav gallery-prev" aria-label="Previous image"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+      <button class="gallery-nav gallery-next" aria-label="Next image"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
       <img class="gallery-main" id="mainImg" src="images/stability-chair.jpg" loading="eager" alt="Stability Chair diagram">
+    </div>
       <div class="gallery-thumbs">
-        <img loading="lazy" src="images/stability-chair-1.jpg" alt="Stability Chair diagram" class="active" onclick="setMain(this)">
+        <img loading="eager" src="images/stability-chair.jpg" alt="Stability Chair" class="active" onclick="setMain(this)">
+        <img loading="lazy" src="images/stability-chair-1.jpg" alt="Stability Chair diagram" onclick="setMain(this)">
         <img loading="lazy" src="images/stability-chair-2.jpg" alt="Stability Chair in use"  onclick="setMain(this)">
         <img loading="lazy" src="images/stability-chair-3.jpg" alt="Stability Chair angle"  onclick="setMain(this)">
         <img loading="lazy" src="images/stability-chair-4.jpg" alt="Stability Chair front"  onclick="setMain(this)">
@@ -189,18 +207,18 @@ footer{background:#f5f5f5;color:#555555;padding:50px 8% 30px;border-top:1px soli
       <p class="features-title">Key Features</p>
       <div class="features-grid"><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Stability Support Handles — dual bar</div></div><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Cushioned Seat — premium leather</div></div><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Resistance Pedal with Secure Locking System</div></div><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Lock Knob for pedal adjustment</div></div><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Spring Connectors — multiple resistance levels</div></div><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Stable curved birchwood base</div></div><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Mobility wheels for easy transport</div></div><div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Compact design for boutique studios</div></div></div>
       <div class="buy-section" id="buy">
-        <h3>Buy Now</h3>
-        <p>Fill in your details and we'll contact you with pricing and delivery info within 24 hours.</p>
+        <h3>Enquire About This Product</h3>
+        <p>Contact us for pricing, availability and bulk orders.</p>
         <form id="buyForm" onsubmit="submitForm(event,'Stability Chair')" novalidate>
           <div class="form-row">
-            <div class="form-group"><label for="inp-name">Full Name *</label><input id="inp-name" name="name" placeholder="Your name" required/></div>
+            <div class="form-group"><label for="inp-name">Full Name *</label><input id="inp-name" type="text" name="name" placeholder="Your name" required/></div>
             <div class="form-group"><label for="inp-phone">Phone *</label><input id="inp-phone" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required/></div>
           </div>
           <div class="form-group"><label for="inp-email">Email</label><input id="inp-email" type="email" name="email" placeholder="you@email.com"/></div>
           <div class="form-group"><label>Machine</label><input type="text" name="machine" value="Stability Chair" readonly/></div>
-          <div class="form-group"><label>City *</label><input id="inp-city" name="city" placeholder="Your city" required/></div>
-          <div class="form-group"><label for="inp-message">Message</label><textarea id="inp-message" name="message" placeholder="Any specific requirements..."></textarea></div>
-          <button type="submit" class="form-submit" id="submitBtn">Buy Now →</button>
+          <div class="form-group"><label for="inp-city">City</label><input id="inp-city" type="text" name="city" placeholder="Your city"/></div>
+          <div class="form-group"><label for="inp-message">Message</label><textarea id="inp-message" name="message" placeholder="Quantity, specific requirements..."></textarea></div>
+          <button type="submit" class="form-submit" id="submitBtn">Enquire Now →</button>
         </form>
         <div class="success-msg" id="successMsg">✅ Thank you! We'll contact you within 24 hours with pricing and delivery details for the Stability Chair.</div>
       </div>
@@ -258,36 +276,76 @@ function setMain(t){
   document.getElementById('mainImg').src=t.src;
   document.querySelectorAll('.gallery-thumbs img').forEach(x=>x.classList.remove('active'));
   t.classList.add('active');
+  var strip=t.closest('.gallery-thumbs');
+    if(strip){var tl=t.offsetLeft,tw=t.offsetWidth,sw=strip.offsetWidth,ss=strip.scrollLeft;
+    if(tl<ss||tl+tw>ss+sw) strip.scrollLeft=tl-sw/2+tw/2;}
 }
 
 (function(){
-  var thumbs, idx=0, timer;
-  function advance(){
-    thumbs=document.querySelectorAll('.gallery-thumbs img');
+  var thumbs, idx=0, timer, progressEl, INTERVAL=3000;
+
+  function setMain(t){
+    document.getElementById('mainImg').src = t.src;
+    document.querySelectorAll('.gallery-thumbs img').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    // scroll thumb into view
+    var strip=t.closest('.gallery-thumbs');
+    if(strip){var tl=t.offsetLeft,tw=t.offsetWidth,sw=strip.offsetWidth,ss=strip.scrollLeft;
+    if(tl<ss||tl+tw>ss+sw) strip.scrollLeft=tl-sw/2+tw/2;}
+  }
+
+  function advance(dir){
+    thumbs = Array.from(document.querySelectorAll('.gallery-thumbs img'));
     if(!thumbs.length) return;
-    idx=(idx+1)%thumbs.length;
+    idx = (idx + (dir||1) + thumbs.length) % thumbs.length;
     setMain(thumbs[idx]);
   }
-  function startAuto(){ timer=setInterval(advance,5000); }
-  function stopAuto(){ clearInterval(timer); }
 
-  document.addEventListener('DOMContentLoaded',function(){
-    thumbs=document.querySelectorAll('.gallery-thumbs img');
+  function resetProgress(){
+    if(!progressEl) return;
+    progressEl.style.transition='none';
+    progressEl.style.width='0%';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      progressEl.style.transition='width '+INTERVAL+'ms linear';
+      progressEl.style.width='100%';
+    }));
+  }
+
+  function startAuto(){
+    clearInterval(timer);
+    resetProgress();
+    timer = setInterval(()=>{ advance(1); resetProgress(); }, INTERVAL);
+  }
+  function stopAuto(){ clearInterval(timer); if(progressEl){ progressEl.style.transition='none'; progressEl.style.width='0%'; } }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    thumbs = Array.from(document.querySelectorAll('.gallery-thumbs img'));
+    progressEl = document.querySelector('.gallery-progress');
+    idx = 0;
     startAuto();
-    // Pause on hover over gallery, resume on leave
-    var col=document.querySelector('.gallery-col');
+
+    // Prev/Next buttons
+    var prevBtn = document.querySelector('.gallery-prev');
+    var nextBtn = document.querySelector('.gallery-next');
+    if(prevBtn) prevBtn.addEventListener('click', function(){ stopAuto(); advance(-1); startAuto(); });
+    if(nextBtn) nextBtn.addEventListener('click', function(){ stopAuto(); advance(1); startAuto(); });
+
+    // Pause on hover
+    var col = document.querySelector('.gallery-col');
     if(col){
-      col.addEventListener('mouseenter',stopAuto);
-      col.addEventListener('mouseleave',startAuto);
+      col.addEventListener('mouseenter', stopAuto);
+      col.addEventListener('mouseleave', startAuto);
     }
-    // Reset timer on manual click
-    document.querySelectorAll('.gallery-thumbs img').forEach(function(img){
-      img.addEventListener('click',function(){
-        stopAuto();
-        thumbs=document.querySelectorAll('.gallery-thumbs img');
-        idx=Array.from(thumbs).indexOf(img);
-        startAuto();
-      });
+
+    // Manual thumb click
+    thumbs.forEach(function(img, i){
+      img.addEventListener('click', function(){ stopAuto(); idx=i; setMain(img); startAuto(); });
+    });
+
+    // Keyboard arrows
+    document.addEventListener('keydown', function(e){
+      if(e.key==='ArrowRight'){ stopAuto(); advance(1); startAuto(); }
+      if(e.key==='ArrowLeft'){  stopAuto(); advance(-1); startAuto(); }
     });
   });
 })();
@@ -321,7 +379,7 @@ async function submitForm(e,machineName){
     await fetch(SCRIPT_URL, {method:'POST', mode:'no-cors', body:form});
     document.getElementById('buyForm').style.display='none';
     document.getElementById('successMsg').style.display='block';
-  }catch(err){btn.textContent='Buy Now';btn.disabled=false;}
+  }catch(err){btn.textContent='Enquire Now →';btn.disabled=false;}
 }
 
 document.getElementById('yr').textContent=new Date().getFullYear();
