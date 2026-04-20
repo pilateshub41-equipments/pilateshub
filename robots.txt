@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pilateshub.in/sitemap.xml
+Sitemap: https://www.pilates-hub.com/sitemap.xml
