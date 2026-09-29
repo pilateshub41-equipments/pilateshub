@@ -224,13 +224,13 @@ function sendAutoReply(data) {
       or reach us directly:
     </p>
     <div style="margin-bottom:28px">
-      <a href="tel:+919738115407" style="display:inline-block;padding:11px 22px;background:#D4A017;color:#fff;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;margin-right:10px">📞 Call Us</a>
-      <a href="https://wa.me/919738115407?text=Hi%2C%20I%20submitted%20an%20enquiry%20on%20your%20website" style="display:inline-block;padding:11px 22px;background:#25D366;color:#fff;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none">💬 WhatsApp</a>
+      <a href="tel:+919019642798" style="display:inline-block;padding:11px 22px;background:#D4A017;color:#fff;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;margin-right:10px">📞 Call Us</a>
+      <a href="https://wa.me/919019642798?text=Hi%2C%20I%20submitted%20an%20enquiry%20on%20your%20website" style="display:inline-block;padding:11px 22px;background:#25D366;color:#fff;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none">💬 WhatsApp</a>
     </div>
     <p style="font-size:14px;color:#444;margin:0">
       Warm regards,<br>
       <strong>The Pilates Hub Team</strong><br>
-      <span style="color:#888;font-size:13px">+91 97381 15407 &nbsp;|&nbsp; info@pilateshub.in &nbsp;|&nbsp; pilateshub.in</span>
+      <span style="color:#888;font-size:13px">+91 90196 42798 &nbsp;|&nbsp; info@pilateshub.in &nbsp;|&nbsp; pilateshub.in</span>
     </p>
   </div>
   <p style="text-align:center;font-size:11px;color:#bbb;margin-top:16px">You're receiving this because you submitted an enquiry on pilateshub.in</p>
@@ -245,7 +245,7 @@ function sendAutoReply(data) {
       + 'Thank you for contacting Pilates Hub!\n\n'
       + 'We have received your enquiry for ' + (data.interest || 'our equipment') + '.\n'
       + 'Our team will get back to you within 24 hours.\n\n'
-      + 'Phone   : +91 97381 15407\n'
+      + 'Phone   : +91 90196 42798\n'
       + 'Email   : info@pilateshub.in\n'
       + 'Website : pilateshub.in\n\n'
       + 'Warm regards,\nThe Pilates Hub Team'
